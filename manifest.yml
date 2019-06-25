@@ -1,0 +1,9 @@
+---
+applications:
+- name: maichibot
+  memory: 64M
+  disk_quota: 256MB
+  buildpack: python_buildpack
+  command: python discordbot.py
+  no-route: true
+  health-check-type: process
