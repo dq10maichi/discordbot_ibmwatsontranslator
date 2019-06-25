@@ -1,6 +1,6 @@
 ---
 applications:
-- name: maichibot
+- name: oreorebot
   memory: 64M
   disk_quota: 256MB
   buildpack: python_buildpack
