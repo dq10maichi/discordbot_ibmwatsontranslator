@@ -14,10 +14,6 @@
 
 set watson language translator APIKEY(SEE IBM Cloud Dashboard)
 
-- watson_url
-
-set watson URL(SEE IBM Cloud Dashboard)
-
 - version
 
 set watson version.(e.g. version = 2019-06-21)
