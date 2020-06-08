@@ -1,26 +1,22 @@
 import discord
 import configparser
 from ibm_watson import LanguageTranslatorV3 as LanguageTranslator
+from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
 
 inifile = configparser.ConfigParser()
 inifile.read('./config.ini','UTF-8')
 version = inifile.get('languageTranslator','version')
-watson_url = inifile.get('languageTranslator','watson_url')
 apikey = inifile.get('languageTranslator','apikey')
 token = inifile.get('discord','token')
 
 client = discord.Client()
 language_translator = LanguageTranslator(
-    version = version,
-    url = watson_url,
-    iam_apikey = apikey
+    authenticator=IAMAuthenticator(apikey),
+    version = version
 )
 
 @client.event
 async def on_ready():
-    print('Logged in as')
-    print(client.user.name)
-    print(client.user.id)
     print('------')
 
 @client.event
